@@ -1,55 +1,62 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'blog/style.css' %}">
-    <link rel="shortcut icon" type="image/png" href="{% static 'images/icon.png' %}" >
     <title>Blog</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'blog/index.css' %}">
 </head>
+
 <body>
     <header>
-        <h1><img src="{% static 'images/icon.png' %}" alt="icone site" style="width: 60px; border-radius: 10px;">Blog Pessoal</h1>
+        <h1>Blog</h1>
+        <div class="buttons">
+            <a href="{% url 'login' %}">
+            <button style="background-color: black; color: white;">Logar</button>
+            </a>
+            <a href="{% url 'register'%}">
+            <button style="background-color: white;">Registrar</button>
+            </a>
+        </div>
     </header>
     <main>
-        <section>
-            <h2>Enviar um novo assunto</h2>
-            <form method="post" onsubmit="{{ salvar }}">
-                {% csrf_token %}
-                <fieldset>
-                    <legend>Formulario</legend>
-                <p>
-                <label for="topico">Topico:</label>
-                <input name="topico" type="text" id="campo-topico" placeholder="Digite o nome do tópico" required>
-                </p>
-                <p>
-                <label for="assunto">Assunto:</label>
-                <textarea name="assunto" id="campo-assunto" placeholder="Digite o assunto" rows="5" cols="100" required></textarea>
-                </p>
-                <p><button type="submit">Enviar</button></p>
-                </fieldset>
-            </form>
-            <p>Obs: caso deseja colocar o assunto em um tópico já existente favor colocar o exato mesmo nome do tópico, sugiro que pesquise para saber se seu tópico já existe</p>
+        <section class="formulario">
+            <div class="title">Quer adicionar algo ao blog?</div>
+            <div class="f1">
+                <h2>Formulario de envio</h2>
+                <form method="post">
+                    {% csrf_token %}
+                    <p>
+                        <label for="topico">Topico:</label>
+                    </p>
+                    <input type="text" id="topico" placeholder="Digite o nome do topico" name="topico">
+                    <p>
+                        <label for="assunto">Assunto:</label>
+                    </p>
+                    <textarea name="assunto" id="assunto" placeholder="Digite o assunto"></textarea>
+                    <p>
+                        <button type="submit">Enviar</button>
+                    </p>
+                </form>
+            </div>
         </section>
         <section>
-            <h2 style="text-align: center; font-size: 35px;">Tópicos</h2>
-            <div class="topicos">
+            <div class="conteudo">
                 {% for i in topicos_assuntos %}
-                    <h3 style="margin-left: 5px; border-bottom: solid 1px; padding-bottom: 5px; font-size: 30px;" id="topico-{{ i.topico }}">{{ i.topico }}</h3>
-                    {% for n in i.assuntos %}
+                <h2>{{ i.topico }}</h3>
                     <div class="assunto">
-                    <p>{{ n.texto }}</p>
+                        {% for a in i.assuntos %}
+                        <div class="paragrafo">
+                            <p>{{ a.texto }}</p>
+                        </div>
+                        {% endfor %}
                     </div>
                     {% endfor %}
-                    
-                {% endfor %}
             </div>
         </section>
     </main>
-    <footer>
-        <p>Alguns direitos reservados ©</p>
-        <p>Site desenvolvido por: Miguel Silva da Roza</p>
-    </footer>
 </body>
+
 </html>

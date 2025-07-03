@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Login</title>
+</head>
+<style>
+    body {
+        background-color: antiquewhite;
+    }
+    .container {
+        width: 100vw;
+        height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .box {
+        border: solid 1px;
+        width: 350px;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        box-shadow: 10px 8px 5px;
+        border-radius: 5px;
+        background-color: aliceblue;
+    }
+</style>
+<body style="margin: 0;">
+    <header>
+
+    </header>
+    <main>
+        <section class="container">
+            
+            <h2>Logar</h2>
+            <div class="box">  
+            <form method="post">
+                {% csrf_token %}
+                <p>
+                    <label for="usuario">Nickname:</label>
+                    <input type="text" id="usuario" placeholder="email@gmail.com" name="usuario">
+                </p>
+                <p>
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" placeholder="Senha" required name="senha">
+                </p>
+                <p><button type="submit">Logar</button>- - - - - - - - -<a href="{% url 'register' %}"><button type="button">Não tenho uma conta</button></a></p>
+            </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

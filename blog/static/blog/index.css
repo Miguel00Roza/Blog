@@ -1,0 +1,69 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 35px;
+    border-bottom: solid 2px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+}
+button {
+    width: 70px;
+    height: 40px;
+    border-radius: 10px;
+    border: solid black 2px;
+}
+button:hover {
+    cursor: pointer;
+}
+
+.formulario {
+    display: flex;
+    padding: 30px;
+    border-bottom: solid 2px;
+    justify-content: space-between;
+}
+.f1 {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: antiquewhite;
+    border-radius: 30px;
+    padding: 10px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+input {
+    border: solid 1px;
+    border-radius: 5px;
+    padding: 5px;
+}
+.title {
+    width: 50%;
+    font-size: 80px;
+}
+.f1 button {
+    background-color: rgba(40, 198, 238, 0.685);
+    border: none;
+    font-size: 15px;
+}
+.conteudo {
+    padding: 50px;
+}
+.assunto {
+    margin-bottom: 50px;
+}
+.paragrafo {
+    background-color: rgb(207, 207, 207);
+    padding-left: 10px;
+    border-radius: 10px;
+    border-top-left-radius: 0px;
+    margin: 3px;
+    padding: 1px;
+}
