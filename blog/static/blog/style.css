@@ -67,3 +67,7 @@ input {
     margin: 3px;
     padding: 1px;
 }
+.footer {
+    border-top: solid 2px;
+    text-align: center;
+}

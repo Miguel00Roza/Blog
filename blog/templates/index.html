@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'blog/index.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/style.css' %}">
 </head>
 
 <body>
@@ -16,7 +16,7 @@
             <a href="{% url 'login' %}">
             <button style="background-color: black; color: white;">Logar</button>
             </a>
-            <a href="{% url 'register'%}">
+            <a href="{% url 'register' %}">
             <button style="background-color: white;">Registrar</button>
             </a>
         </div>
@@ -57,6 +57,10 @@
             </div>
         </section>
     </main>
+    <div class="footer">
+        <p>Direitos reservados©</p>
+        <p>Site feito por: Miguel Silva da Roza</p>
+    </div>
 </body>
 
 </html>

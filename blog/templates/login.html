@@ -3,56 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog-Login</title>
+    <title>Blog</title>
 </head>
 <style>
     body {
-        background-color: antiquewhite;
+        font-family: Arial, Helvetica, sans-serif;
     }
     .container {
         width: 100vw;
-        height: 80vh;
+        height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-direction: column;
     }
     .box {
-        border: solid 1px;
-        width: 350px;
-        height: auto;
+        width: 300px;
+        height: 400px;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        flex-direction: column;
-        box-shadow: 10px 8px 5px;
+        border: solid 2px;
+        border-radius: 30px;
+        box-shadow: 2px 5px 5px gray;
+        background-color: whitesmoke;
+    }
+    .buttons {
+        padding: 10px;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .buttons button {
         border-radius: 5px;
-        background-color: aliceblue;
+        border: none;
+        background-color: rgba(46, 137, 255, 0.685);
+        padding: 5px;
+    }
+    .buttons button:hover {
+        cursor: pointer;
+        background-color: rgb(46, 137, 255);
     }
 </style>
-<body style="margin: 0;">
-    <header>
-
-    </header>
-    <main>
-        <section class="container">
-            
-            <h2>Logar</h2>
-            <div class="box">  
+<body>
+    <div class="container">
+        <div class="box">
+            <h2>Login</h2>
             <form method="post">
                 {% csrf_token %}
                 <p>
-                    <label for="usuario">Nickname:</label>
-                    <input type="text" id="usuario" placeholder="email@gmail.com" name="usuario">
+                <label for="name">Nome:</label>
                 </p>
+                <input type="text" id="name" placeholder="Digite seu nome" name="usuario">
                 <p>
-                    <label for="senha">Senha:</label>
-                    <input type="password" id="senha" placeholder="Senha" required name="senha">
+                <label for="senha">Senha:</label>
                 </p>
-                <p><button type="submit">Logar</button>- - - - - - - - -<a href="{% url 'register' %}"><button type="button">Não tenho uma conta</button></a></p>
+                <input type="password" placeholder="Digite sua senha" id="senha" name="senha">
+                <div class="buttons">
+                <button type="submit">Entrar</button>
+                <a href="{% url 'register'%}"><button type="button">Nao tenho conta</button></a>
+                </div>
             </form>
-            </div>
-        </section>
-    </main>
+        </div>
+    </div>
 </body>
 </html>
