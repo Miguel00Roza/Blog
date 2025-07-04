@@ -23,4 +23,7 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('register/', views.RegisterScreen, name='register'),
     path('login/', views.LoginScreen, name='login'),
+    path('Page/', views.indexLogin, name='indexLogin'),
+    path('logout/', views.deslogar, name='deslogar'),
+
 ]

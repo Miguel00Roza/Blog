@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'blog/style.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/styleLogin.css' %}">
     <link rel="shortcut icon" href="{% static 'images/icon.ico'%}" type="image/x-icon">
 </head>
 
@@ -14,12 +14,10 @@
     <header>
         <h1>Blog</h1>
         <div class="buttons">
-            <a href="{% url 'login' %}">
-            <button style="background-color: black; color: white;">Logar</button>
-            </a>
-            <a href="{% url 'register' %}">
-            <button style="background-color: white;">Registrar</button>
-            </a>
+            <p>
+                {{ usuario }}
+                <a href="{% url 'deslogar'%}"><button style="width: 70px; height: 30px; background-color: rgba(255, 107, 107, 0.575); border: none;">Deslogar</button></a>
+            </p>
         </div>
     </header>
     <main>
@@ -52,7 +50,7 @@
                         <div class="paragrafo">
                             <p style="font-size: 10px; padding-left: 3px;"><img src="{% static 'images/iconePadrao.jpg'%}" style="width: 20px; border-radius: 10px;">{{ a.usuario }}</p>
                             <p style="padding-left: 3px;">{{ a.texto }}</p>
-                            <p style="font-size: 8px; text-align: end; padding-right: 3px;">{{ a.data_de_envio }}</p>
+                            <p style="font-size: 10px; text-align: end; padding-right: 3px;">{{ a.data_de_envio }}</p>
                         </div>
                         {% endfor %}
                     </div>
@@ -63,6 +61,8 @@
     <div class="footer">
         <p>Direitos reservados©</p>
         <p>Site feito por: Miguel Silva da Roza</p>
+        <p>Usuario logado : {{ usuario }}</p>
+        
     </div>
 </body>
 
