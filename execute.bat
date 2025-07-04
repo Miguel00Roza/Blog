@@ -1,1 +1,1 @@
-pdm run manage.py runserver
+python manage.py runserver
